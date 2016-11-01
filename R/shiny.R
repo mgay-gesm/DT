@@ -339,7 +339,7 @@ sessionDataURL = function(session, data, id, filter) {
       'Some DataTables parameters contain multibyte characters ',
       'that do not work in current locale.'
     )
-    cat(paste(params), file=stderr())
+    cat(paste('PARAMS:', params), file=stderr())
     params = shiny::parseQueryString(params, nested = TRUE)
 
     res = tryCatch(filter(data, params), error = function(e) {
